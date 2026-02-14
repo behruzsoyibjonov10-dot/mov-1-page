@@ -9,14 +9,14 @@ function Plan() {
       desc:
         "Enjoy an extensive library of movies and shows, including recently released titles.",
       monthly: 9.99,
-      yearly: 9.99
+      yearly: 90.99,
     },
     {
       name: "Standard Plan",
       desc:
         "Access a wider selection of movies and shows, including most new releases and exclusive content.",
       monthly: 12.99,
-      yearly: 12.99,
+      yearly: 120.99,
       popular: true
     },
     {
@@ -24,15 +24,14 @@ function Plan() {
       desc:
         "Access the widest selection of movies and shows, including all new releases and Offline Viewing.",
       monthly: 14.99,
-      yearly: 14.99
+      yearly: 149.99
     }
   ];
 
   return (
     <section className="bg-black text-white py-20">
-      <div className="max-w-7xl mx-auto px-5 md:px-0">
+      <div className="max-w-7xl mx-auto px-8 md:px-10">
 
-        {/* TOP */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-14">
           <div className="max-w-2xl">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -45,30 +44,28 @@ function Plan() {
             </p>
           </div>
 
-          {/* TOGGLE */}
           <div className="mt-6 lg:mt-0 bg-[#111] p-1 rounded-xl flex">
             <button
               onClick={() => setBilling("monthly")}
-              className={`px-6 py-2 rounded-lg text-sm transition
+              className={`flex-1 text-center px-3 md:px-6 py-2 md:py-2.5 rounded-lg text-sm md:text-base transition
                 ${billing === "monthly"
                   ? "bg-[#1c1c1c] text-white"
-                  : "text-gray-400"}`}
+                  : "text-gray-400 hover:text-white hover:bg-[#1c1c1c]"}`}
             >
               Monthly
             </button>
             <button
               onClick={() => setBilling("yearly")}
-              className={`px-6 py-2 rounded-lg text-sm transition
+              className={`flex-1 text-center px-3 md:px-6 py-2 md:py-2.5 rounded-lg text-sm md:text-base transition
                 ${billing === "yearly"
                   ? "bg-[#1c1c1c] text-white"
-                  : "text-gray-400"}`}
+                  : "text-gray-400 hover:text-white hover:bg-[#1c1c1c]"}`}
             >
               Yearly
             </button>
           </div>
         </div>
 
-        {/* CARDS */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {plans.map((plan, index) => (
             <div
@@ -89,19 +86,11 @@ function Plan() {
 
               <div className="mb-8">
                 <span className="text-4xl font-bold">
-                  $
-                  {billing === "monthly"
-                    ? plan.monthly
-                    : plan.yearly}
+                  ${billing === "monthly" ? plan.monthly : plan.yearly}
                 </span>
                 <span className="text-gray-400 text-sm">
                   {billing === "monthly" ? " /month" : " /year"}
                 </span>
-
-                {billing === "yearly" && (
-                  <div className=" text-sm mt-1">
-                  </div>
-                )}
               </div>
 
               <div className="flex gap-4">

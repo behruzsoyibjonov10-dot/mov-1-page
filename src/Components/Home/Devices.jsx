@@ -3,7 +3,7 @@ import React from "react";
 function Devices() {
   return (
     <section className="bg-black text-white py-24">
-      <div className="max-w-7xl mx-auto px-5 md:px-0">
+      <div className="max-w-7xl mx-auto px-8 md:px-">
 
         <h2 className="text-4xl font-semibold mb-4">
           We Provide you streaming experience across various .

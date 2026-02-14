@@ -111,17 +111,17 @@ function Header() {
     ]
 
     return (
-        <header className="Header relative min-h-screen overflow-hidden bg-black">
+        <header className="Header relative min-h-screen  bg-black">
 
             {movies.length > 0 && (
                 <div className="absolute inset-0 z-0 opacity-60">
-                    <Marquee speed={35} gradient={false} className="h-[320px]">
+                    <Marquee speed={35} gradient={false} className="h-60">
                         {movies.map(movie => (
                             <img
                                 key={movie.id}
                                 src={movie.poster}
                                 alt=""
-                                className="h-[300px] mx-4 rounded-xl object-cover"
+                                className="h-50 mx-3 rounded-xl object-cover"
                             />
                         ))}
                     </Marquee>
@@ -130,28 +130,29 @@ function Header() {
                         speed={25}
                         direction="right"
                         gradient={false}
-                        className="h-[320px] mt-6"
+                        className="h-60"
                     >
                         {movies.map(movie => (
                             <img
                                 key={movie.id + "-2"}
                                 src={movie.poster}
                                 alt=""
-                                className="h-[300px] mx-4 rounded-xl object-cover"
+                                className="h-50 mx-3 rounded-xl object-cover"
                             />
                         ))}
                     </Marquee>
 
-                    <Marquee speed={35} gradient={false} className="h-[320px]">
+                    <Marquee speed={35} gradient={false} className="h-40">
                         {movies.map(movie => (
                             <img
                                 key={movie.id}
                                 src={movie.poster}
                                 alt=""
-                                className="h-[300px] mx-4 rounded-xl object-cover"
+                                className="h-50 mx-3 rounded-xl object-cover"
                             />
                         ))}
                     </Marquee>
+
                 </div>
             )}
 
@@ -161,23 +162,20 @@ function Header() {
                 <div className="title text-center w-full mx-auto px-4 pb-16">
 
                     <div className="Logo flex justify-center mb-20 md:mb-28 mt-10">
-                        <img className="w-[20%] relative top-14" src="/public/img/LogoHero.png" alt="Logo" />
+                        <img className="w-[16%] relative top-14" src="/public/img/LogoHero.png" alt="Logo" />
                     </div>
 
-                    <h1 className="text-white font-bold mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                    <h1 className="text-white font-bold mb-6 text-3xl sm:text-3xl md:text-3xl lg:text-3xl">
                         The Best Streaming Experience
                     </h1>
 
-                    <p className="text-[#999999] mb-8 max-w-3xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed">
+                    <p className="text-[#999999] mb-8 max-w-3xl mx-auto text-sm sm:text-base md:text-1 leading-relaxed">
                         StreamVibe is the best streaming experience for watching your favorite
                         movies and shows on demand, anytime, anywhere. With StreamVibe, you can
                         enjoy a wide variety of content.
                     </p>
 
-                    <button className="bg-[#E50000] text-white px-10 py-4 rounded-lg relative bottom-3 hover:bg-red-700 transition duration-300 text-sm sm:text-base flex items-center gap-2 mx-auto">
-                        ▶ Start Watching Now
-                    </button>
-
+                  
                 </div>
             </div>
         </header>
