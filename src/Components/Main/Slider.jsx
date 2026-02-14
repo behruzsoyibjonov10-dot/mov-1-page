@@ -10,7 +10,7 @@ const movies = [
   { id: 48, title: "MONEY HEIST", poster: "/img/Image (21).png", videoId: "_InqQJRqGW4", duration: 120000 }, // 2 daqiqa
   { id: 49, title: "THE GARY MAN", poster: "/img/Image (22).png", videoId: "BmllggGO4pM", duration: 180000 }, // 3 daqiqa
   { id: 50, title: "PEAKY BLINDERS", poster: "/img/Image (23).png", videoId: "oVzVdvGIC7U", duration: 150000 }, // 2.5 daqiqa
-  { id: 51, title: "MANS", poster: "/public/img/Image (24).png", videoId: "r9jwGansp1E", duration: 180000 },
+  { id: 51, title: "MANS", poster: "/img/Image (24).png", videoId: "r9jwGansp1E", duration: 180000 },
   { id: 52, title: "There Will Be Blood", poster: "https://m.media-amazon.com/images/M/MV5BMjAxODQ4MDU5NV5BMl5BanBnXkFtZTcwMDU4MjU1MQ@@._V1_SX300.jpg", videoId: "FeSLPELpMeM", duration: 180000 },
   { id: 53, title: "Casino", poster: "https://m.media-amazon.com/images/M/MV5BMTcxOWYzNDYtYmM4YS00N2NkLTk0NTAtNjg1ODgwZjAxYzI3XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg", videoId: "EJXDMwGWhoA", duration: 120000 },
   { id: 54, title: "No Country for Old Men", poster: "https://m.media-amazon.com/images/M/MV5BMjA5Njk3MjM4OV5BMl5BanBnXkFtZTcwMTc5MTE1MQ@@._V1_SX300.jpg", videoId: "38A__WT3-o0", duration: 180000 },
