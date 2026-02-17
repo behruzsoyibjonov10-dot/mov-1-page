@@ -4,62 +4,62 @@ import { useState } from "react";
 function Navbar() {
   const [open, setOpen] = useState(false);
 
+  const navItems = [
+    { name: "Home", path: "/" },
+    { name: "Movies & Shows", path: "/movies" },
+    { name: "Support", path: "/support" },
+    { name: "Subscriptions", path: "/subscriptions" },
+    { name: "Register", path: "/register" },
+  ];
+
   return (
-    <header className="fixed top-0 left-0 w-full z-50 px-20 py-2">
-      <div>
-        <div className="max-w-[1500px] mx-auto">
-          <nav className="h-[98px] flex items-center justify-between">
+    <header className="fixed top-0 left-0 w-full z-50 px-5 md:px-20 py-2  ">
+      <div className="max-w-[1500px] mx-auto">
+        <nav className=" flex items-center justify-between">
 
-            <div className="flex items-center gap-3 cursor-pointer">
-              <a href="/" className="flex items-center gap-3">
-                <img
-                  src="/img/LOGO.png"
-                  alt="StreamVibe"
-                  className="h-15 w-15"
-                />
-                <span className="text-white text-xl font-bold tracking-wide">
-                  StreamVibe
-                </span>
-              </a>
-            </div>
+          <div className="flex items-center gap-3 cursor-pointer">
+            <Link to="/" className="flex items-center gap-3">
+              <img src="/img/LOGO.png" alt="StreamVibe" className="h-15 w-15" />
+              <span className="text-white text-xl font-bold tracking-wide">
+                StreamVibe
+              </span>
+            </Link>
+          </div>
 
-            <ul className="hidden lg:flex items-center gap-12 text-[15px] border-b-2 rounded-xl py-5 px-5 bg-black">
-              {[
-                { name: "Home", path: "/" },
-                { name: "Movies & Shows", path: "/movies" },
-                { name: "Support", path: "/support" },
-                { name: "Subscriptions", path: "/subscriptions" },
-                { name: "Register", path: "/register" },
-              ].map((item) => (
-                <li key={item.name}>
-                  <NavLink
-                    to={item.path}
-                    className={({ isActive }) =>
-                      `
+          <ul className="hidden lg:flex items-center gap-12 text-[15px] border-b-2 rounded-xl py-5 px-5 bg-black">
+            {navItems.map((item) => (
+              <li key={item.name}>
+                <NavLink
+                  to={item.path}
+                  className={({ isActive }) =>
+                    `
                       relative pb-1 transition-all duration-300
                       ${
                         isActive
                           ? "text-white after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:bg-red-600"
                           : "text-gray-400 hover:text-white"
                       }
-                      `
-                    }
-                  >
-                    {item.name}
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
+                    `
+                  }
+                >
+                  {item.name}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
 
-            <div className="flex items-center gap-5">
-
-              <button className="w-7 h-7 flex items-center justify-center rounded-full transition">
+          <div className="flex items-center gap-5 lg:gap-3">
+            <div className="hidden lg:flex items-center gap-5">
+              <Link
+                to="/search"
+                className="w-7 h-7 flex items-center justify-center rounded-full transition"
+              >
                 <img
                   src="./icon/Search.png"
                   alt="Search"
                   className="opacity-80 w-full h-full"
                 />
-              </button>
+              </Link>
 
               <button className="w-7 h-7 flex items-center justify-center rounded-full transition">
                 <img
@@ -68,18 +68,18 @@ function Navbar() {
                   className="w-full h-full opacity-80"
                 />
               </button>
-
-              <button
-                onClick={() => setOpen(!open)}
-                className="lg:hidden flex flex-col gap-1 ml-2 z-50"
-              >
-                <span className="w-6 h-0.5 bg-white"></span>
-                <span className="w-6 h-0.5 bg-white"></span>
-                <span className="w-6 h-0.5 bg-white"></span>
-              </button>
             </div>
-          </nav>
-        </div>
+
+            <button
+              onClick={() => setOpen(!open)}
+              className="lg:hidden flex flex-col gap-1 ml-2 z-50"
+            >
+              <span className="w-6 h-0.5 bg-white"></span>
+              <span className="w-6 h-0.5 bg-white"></span>
+              <span className="w-6 h-0.5 bg-white"></span>
+            </button>
+          </div>
+        </nav>
       </div>
 
       <div
@@ -95,15 +95,9 @@ function Navbar() {
         ${open ? "translate-x-0" : "-translate-x-full"}
         lg:hidden`}
       >
-        <div className="px-6 py-10">
+        <div className="px-6 py-10 flex flex-col gap-8">
           <ul className="flex flex-col gap-6 text-gray-400 text-lg">
-            {[
-              { name: "Home", path: "/" },
-              { name: "Movies & Shows", path: "/movies" },
-              { name: "Support", path: "/support" },
-              { name: "Subscriptions", path: "/subscriptions" },
-              { name: "Register", path: "/register" },
-            ].map((item) => (
+            {navItems.map((item) => (
               <li key={item.name}>
                 <NavLink
                   to={item.path}
@@ -119,6 +113,28 @@ function Navbar() {
               </li>
             ))}
           </ul>
+
+          <div className="flex gap-5 mt-5">
+            <Link
+              to="/search"
+              onClick={() => setOpen(false)}
+              className="w-7 h-7 flex items-center justify-center rounded-full transition"
+            >
+              <img
+                src="./icon/Search.png"
+                alt="Search"
+                className="opacity-80 w-full h-full"
+              />
+            </Link>
+
+            <button className="w-7 h-7 flex items-center justify-center rounded-full transition">
+              <img
+                src="./icon/Notification.png"
+                alt="Notifications"
+                className="w-full h-full opacity-80"
+              />
+            </button>
+          </div>
         </div>
       </div>
     </header>

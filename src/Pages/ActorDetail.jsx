@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import Slider from '../Components/Main/Slider'
 
 function ActorDetail() {
   const navigate = useNavigate();
@@ -43,15 +44,21 @@ function ActorDetail() {
            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur vero ex dicta in distinctio sequi excepturi corporis? Facilis, numquam impedit?
           </p>
 
-          <div className="mt-6 flex gap-3">
-            <span className="px-4 py-2 rounded-xl bg-[#1a1a1a] border border-[#262626] text-sm">
-              Actor ID: {actor.id}
-            </span>
-          </div>
+          
         </div>
 
       </div>
+<div className="dld mt-10 bg-transparent 
+                relative 
+                w-full 
+                sm:w-[105%] sm:right-4 
+                md:w-[110%] md:right-8 
+                lg:w-[110%] lg:right-16">
+  <Slider />
+</div>
+
     </div>
+    
   );
 }
 

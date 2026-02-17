@@ -4,7 +4,7 @@ import Banner from '../Components/Main/Banner'
 
 const Movies = () => {
   useEffect(() => {
-    window.scrollTo(0, 0);
+   document.documentElement.scrollTop = 0;
   }, []);
 
   return (

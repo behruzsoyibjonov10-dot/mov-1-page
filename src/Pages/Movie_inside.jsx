@@ -40,7 +40,6 @@ const MovieDetail = () => {
     { id: 6, name: "Actor 6", img: "https://i.pravatar.cc/150?u=6" },
   ];
 
-  // 8 ta kichikroq box uchun ma'lumotlar
   const reviewsData = Array.from({ length: 8 }, (_, i) => ({
     id: i + 1,
     name: `Aniket Roy ${i + 1}`,
@@ -55,7 +54,6 @@ const MovieDetail = () => {
   const handleScroll = (ref, direction) => {
     if (ref.current) {
       const container = ref.current;
-      // Box kengligi va oraliq (gap) ni hisobga olgan holda 2 ta box miqdori
       const boxWidth = container.querySelector('.review-box')?.clientWidth || 300;
       const gap = 16; 
       const scrollAmount = (boxWidth + gap) * 2; 
@@ -66,7 +64,6 @@ const MovieDetail = () => {
       
       container.scrollTo({ left: scrollTo, behavior: "smooth" });
       
-      // Nuqta (dot) indikatorini 2 talik qadamga moslash
       setTimeout(() => {
         const index = Math.round(container.scrollLeft / scrollAmount);
         setActiveDot(index);
